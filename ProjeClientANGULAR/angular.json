@@ -1,0 +1,152 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ProjeClientANG": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ProjeClientANG",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [
+               "./node_modules/js/jquery.min.js",
+              "./node_modules/js/modernizr.js",
+              "./node_modules/js/bootstrap.js",
+              "./node_modules/js/bootstrap-hover-dropdown.js",
+              "./node_modules/js/jquery.easing.1.3.js",
+              "./node_modules/js/skrollr.min.js",
+              "./node_modules/js/smooth-scroll.js",
+              "./node_modules/js/jquery.appear.js",
+              "./node_modules/js/wow.min.js",
+              "./node_modules/js/page-scroll.js",
+              "./node_modules/js/jquery.easypiechart.js",
+              "./node_modules/js/jquery.parallax-1.1.3.js",
+              "./node_modules/js/jquery.isotope.min.js",
+              "./node_modules/js/owl.carousel.min.js",
+              "./node_modules/js/jquery.magnific-popup.min.js",
+              "./node_modules/js/popup-gallery.js",
+              "./node_modules/js/text-effect.js",
+              "./node_modules/js/jquery.tools.min.js",
+              "./node_modules/js/jquery.revolution.js",
+              "./node_modules/js/counter.js",
+              "./node_modules/js/jquery.countTo.js",
+              "./node_modules/js/jquery.fitvids.js",
+              "./node_modules/js/imagesloaded.pkgd.min.js",
+              "./node_modules/js/classie.js",
+              "./node_modules/js/hamburger-menu.js",
+              "./node_modules/js/main.js"          
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ProjeClientANG:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ProjeClientANG:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ProjeClientANG:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "ProjeClientANG:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ProjeClientANG:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "ProjeClientANG"
+}

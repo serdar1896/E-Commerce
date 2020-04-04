@@ -1,0 +1,48 @@
+.nav.navbar-nav.navbar-right.panel-group
+{
+  position: absolute;
+ top: -33px;
+ left: 205px;
+}
+
+.inputlogin {border:none; padding:7px 15px; height: 20px;} 
+#btnlogin{ position: relative;  }
+.fa-user  { margin: 5px 4px 0 10px;   font-size: 18px;   }
+.top-cart a:hover .fa-user  { color: #0aac40;}
+.top-cart a:hover .fa-shopping-cart{ color: #0aac40;}
+.searching {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 400px;
+  height: 35px;
+  border: 2px solid rgb(255, 168, 68);
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 13px;
+
+}
+
+.searchTerm:focus{
+  color: rgb(0, 0, 0);
+}
+
+.searchButton {
+  position: absolute;
+  width: 40px;
+  height: 35px;
+  border: 2px solid rgb(255, 168, 68);
+  background: rgb(255, 170, 11);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
